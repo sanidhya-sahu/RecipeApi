@@ -18,7 +18,7 @@ const setScrollPosition = () =>{
     recipeContainer.scrollTo({top:0, behaviour: "smooth"})
 }
 
-function loadRecipies(type="chicken"){
+function loadRecipies(type=""){
     const url = baseURL + `&q=${type}`;    
     fetch(url)
         .then(res => res.json())
