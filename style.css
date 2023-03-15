@@ -5,7 +5,20 @@
     padding: 0;
     box-sizing: border-box;
     font-family: monospace;
-    
+    /* font-family: 'Sono', sans-serif; */
+}
+::-webkit-scrollbar{
+    width: 17px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #FFC3A1;
+    border-radius: 5px;
+    border: 3px solid #FAF1E6;
+    /* box-shadow: inset 2px 2px 3px #F08; */
+}
+::-webkit-scrollbar-track{
+    background: #FAF1E6;
 }
 
 body {
@@ -14,11 +27,12 @@ body {
     background-color: #FAF1E6;
     overflow: hidden;
     overflow-y: auto;
+    background: url(bg2.jpg);
     }
     
     header {
         height: 100px;
-        background: #282828;
+        /* background: #FFC3A1; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -29,6 +43,12 @@ body {
         font-family: monospace;
         letter-spacing: 2px;
         font-weight: bolder;
+
+        backdrop-filter: blur(6px) saturate(200%);
+    -webkit-backdrop-filter: blur(6px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.74);
+    /* border-radius: 12px; */
+    border: 1px solid rgba(255, 255, 255, 0.125);
     }
     
     header img {
@@ -43,7 +63,12 @@ body {
         height: 50px;
         margin-top: 50px;
     }
-    
+    #search button img{
+        size: inherit;
+    }
+    #btnp{
+        display: none;
+    }
     #searchbar {
         height: 70px;
         width: 70%;
@@ -52,31 +77,40 @@ body {
         padding: 10px 10px;
         font-size: 1.15rem;
         font-style: italic;
-        background: #FCF9BE;
-        border: 5px solid #FFDCA9;
+        background: #FFC3A1;
+        border: 5px solid #FFC3A1;
+        box-shadow: 0px 0px 8px 1px #050505;
         outline: none;
     }
     
-        #searchbar:focus {
-            width: 71%;
-            color: #E96479;
-        }
+    #searchbar:focus {
+        width: 71%;
+        color: #E96479;
+    }
     
-        .btn {
-            padding: 17px 25px;
-            background: #FCF9BE;
-            border-radius: 5px;
-            user-select: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-            border: 4px solid #FFDCA9;
-            border-radius: 25px;
-        }
+    .btn {
+        padding: 17px 25px;
+        background: #FFC3A1;
+        border-radius: 5px;
+        user-select: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border: 3px solid #FFC3A1;
+        border-radius: 25px;
+        display: flex;
+        box-shadow: 0px 0px 8px 1px #050505;
+        transition: all 200ms ease-in-out;
+    }
     
         .btn:hover {
             background: #FFDCA9;
         }
-    
+    .btn:hover > #btnp{
+        display: flex;
+        position: relative;
+        left: 8px;
+    top: 3px;
+    }
         #recipe-container {
             display: flex;
             justify-content: center;
@@ -91,10 +125,10 @@ body {
             height: 300px;
             width: 300px;
             padding: 4px;
-            box-shadow: 0px 0px 8px 2px #FFDCA9;
+            box-shadow: 0px 0px 8px 1px #050505;
             margin: 25px;
             transition: all 200ms ease-in-out;
-            background: #FCF9BE;
+            background: #FFC3A1;
             border-radius: 10px;
     
         }
